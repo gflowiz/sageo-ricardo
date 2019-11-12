@@ -206,6 +206,8 @@ La symbologie des noeuds consiste à paramétrer leur dessin, et à appliquer de
 La teinte est identique pour tous les noeuds.
 ![](https://i.imgur.com/9vC9K7s.png)
 
+**Application sur les noeuds** : symbolisation des noeuds (barycentre des zones) avec une *forme* cercle (choix unique) de *taille* fixée et de teinte unique noire.
+
 ![](https://i.imgur.com/j8Zm1b8.png)
 
 **Couleur / Variable** : 
@@ -250,7 +252,7 @@ L'opacité de la teinte des noeuds est variable, en fonction d'un caractère (ic
 
 ![](https://i.imgur.com/2zhzEth.png)
 
-Exemple : Résultat 
+**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille* *variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
 ![](https://i.imgur.com/UxOvM50.png)
 
 
@@ -258,6 +260,9 @@ Exemple : Résultat
 ![](https://i.imgur.com/FrioZff.png)
 
 La symbologie des liens consiste à paramétrer leur dessin, et à appliquer des variables visuelles permettant d'enrichir qualitativement la carte. 
+
+Exemple: lien droits bilatéraux orientés, teinte noire unique 
+![](https://i.imgur.com/QLhHhIu.png)
 
 ## 5.2.1. Géometrie
 
@@ -325,10 +330,21 @@ Idéalement, il est nécessaire de paramétrer simultanément la *taille* des li
 ![](https://i.imgur.com/B0xJk9K.png)
 
 
-
 ![](https://i.imgur.com/6UvEj9J.png)
 
 
+**Application sur les liens** : symbolisation des liens avec une *forme* *triangle* *courbe* avec une *couleur* *variable* selon une fonction linéaire et présentant une variation *d'opacité*
+
+Paramètres : 
+![](https://i.imgur.com/orgWxLd.png)
+
+Carte résultat :
+
+-- Sommets placés sous les noeuds
+![](https://i.imgur.com/mSOYw2m.png)
+
+-- Sommets placés sur les noeuds (voir section gestion des dispositions)
+![](https://i.imgur.com/Jn0EtxU.png)
 
 ## 5.4. Ajout d'un fond géonumérique
 
