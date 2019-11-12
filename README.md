@@ -27,7 +27,7 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
-	- decennie (décennie conernée par le flux)
+	- decennie (décennie concernée par le flux)
 
 
 - [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique
@@ -66,6 +66,8 @@ Vous devez également déclarer les 3 champs minimums requis pour la cartographi
 Si la matrice OD est temporelle ou disponible pour différentes catégories, vous devez également choisir une méthode d'agrégation.
 
 Sur la page d'accueil d'arabesque ([arabesque](http://arabesque.ifsttar.fr/)), sélectionnez au moins un ensemble de données de flux.
+
+![](https://i.imgur.com/BjvHVHn.png)
 
 ![](https://i.imgur.com/7ovFJ1V.png)
 
