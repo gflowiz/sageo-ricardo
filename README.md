@@ -69,7 +69,10 @@ Sur la page d'accueil d'arabesque ([arabesque](http://arabesque.ifsttar.fr/)), s
 
 ![](https://i.imgur.com/BjvHVHn.png)
 
-![](https://i.imgur.com/7ovFJ1V.png)
+**Application**
+Chargement des données *SAGEO_RICardo_edges_small.csv*
+
+![](https://i.imgur.com/GjzU9IE.png)
 
 ### 1.2. Données géographiques
 
@@ -79,7 +82,10 @@ Si vous avez des données de localisation associées à vos OD, vous pouvez char
 
 Si vous sélectionnez "**Import Location**", vous devez charger un fichier GEOJSON ou csv, puis choisir l'ID des nœuds et leurs coordonnées géographiques lat/long.
 
-![](https://i.imgur.com/RAIFQ3t.png)
+**Application**
+Chargement des données *SAGEORICardonodes.csv*
+
+![](https://i.imgur.com/MMhQw1E.png)
 
 #### 1.2.2. **Localisation prédéfinie**
 
