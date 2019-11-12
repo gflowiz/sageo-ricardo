@@ -97,11 +97,25 @@ La liste complète des noueds, liens supprimés est alors affichée, uniquement 
 
 ## 2. Présentation de l'interface
 
-Après avoir chargé les données, vous entrez directement dans l'application, qui propose une première carte avec les paramètres par défaut.
+### Calcul automatique d'indicateurs
+
+Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée CSV (Voir sections Export et sauvegarde):
+
+**Indicateurs sur les liens :**
+distance euclidienne entre les entités d'origine et de destination
+
+**Indicateurs sur les noeuds :**
+Exemple d'indicateurs additionnels calculés sur les noeuds (données RIcardo)
+
+![](https://i.imgur.com/ygefevd.png)
+
+### Symbolisation automatique
+
+Carte réalisée par défaut lors de l'arrivée sur l'interface.
 
 ![](https://i.imgur.com/vzw3sW0.png)
 
-L'interface est composée des deux sections suivantes.
+L'interface est composée des deux panneaux suivantes.
 
 ## 2.1. Panneau de gauche
 
