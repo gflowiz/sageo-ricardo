@@ -1,15 +1,9 @@
----
-title: 'arabesque tutorial: quick documentation'
-disqus: hackmd
----
+
 
 ![](https://i.imgur.com/KgD2D99.png)
 
 *Arabesque* quick tutorial (v.0)
-===
-![downloads](https://img.shields.io/github/downloads/atom/atom/total.svg)
-![build](https://img.shields.io/appveyor/ci/:user/:repo.svg)
-![chat](https://img.shields.io/discord/:serverId.svg)
+
 
 ## Contents
 
@@ -17,82 +11,83 @@ disqus: hackmd
 
 ## Introduction générale
 
-***arabesque*** is a web application for thematic flow mapping developped, developed as part of the *geographic flow visualisation (gflowiz project)*. See: https://geoflowiz.hypotheses.org for details. 
+***arabesque*** est une application web de cartographie thématique des flux développée dans le cadre du projet gflowiz. Voir : https://geoflowiz.hypotheses.org pour plus de détails. 
 
-arabesque is available free of charge at the following address: http://arabesque.ifsttar.fr/ 
+arabesque est disponible gratuitement à l'adresse suivante : http://arabesque.ifsttar.fr/ 
 
-It is working with Chromium and Mozilla 
+Il fonctionne avec Chromium et Mozilla 
 
-The general documentation (work in progress) and computer code are provide on the following repository: https://github.com/gflowiz/arabesque
-
-***arabesque*** allows you to import your own flow datasets, in the form of an origin-destination matrix (list format in CSV), explore them, filter them to create a readable flow map, in accordance with the principles of cartographic semiology
-
-The realization of a flowmap in arabesque is composed of 5 steps:
-1: Importing flow data
-2: flow data Data processing
-(creation of indicators, statistics)
-3: Data mining and filtering
-4: Graphical Symbolisation
-5: Export
+La documentation générale (travaux en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
 
 
-## 1. Data importation
 
-For a first discovery of ***arabesque***, you can use the data sets provided as example in the **Demo section**. 
+***arabesque*** vous permet d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
+
+La réalisation d'une cartede flux avec arabesque se décompose en 5 grandes étapes :
+
+
+1 : Importation des données de flux
+2 : Traitement des données de flux (création d'indicateurs, statistiques)
+3 : Exploration et filtrage des données
+4 : Symbolisation graphique
+5 : Exportation
+
+
+## 1. Importation de données
+
+Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux de données fournis comme exemple dans la section **Démo**. 
 
 ![](https://i.imgur.com/LdUeTbj.png)
 
-For this tutorial, we used the French national commuting in 2015 (flows up to 100 commuters).
+Pour ce tutoriel, nous avons utilisé les déplacements nationaux français en 2015 (flux jusqu'à 100 navetteurs).
 
 Source : Mobilités professionnelles en 2015 : déplacements domicile - lieu de travailRecensement de la population - Base flux de mobilité (INSEE, 2015). https://www.insee.fr/fr/statistiques/fichier/3566477/base-excel-flux-mobilite-domicile-lieu-travail-2015.zip
 
-### 1.1 Link dataset
+#### 1.1 Données OD
 
-arabesque requires loading at least one set of flow data : a .CSV link file (separator : comma) in long format. 
+Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien.CSV (séparateur : virgule) en format long. 
 
-You must also declare the 3 minimum fields required for flow mapping: those corresponding to the places of origin, the places of destination, and the flow values. 
+Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : ceux correspondant aux lieux d'origine, aux lieux de destination et aux valeurs de flux. 
 
-If the OD the matrix is temporal or categorical, you must also choose and aggregation method if necessary.
+Si la matrice OD est temporelle ou disponible pour différentes catégories, vous devez également choisir une méthode d'agrégation.
 
-On the home page of arabesque ([arabesque](http://arabesque.ifsttar.fr/)) select at least a link flow dataset and 
+Sur la page d'accueil d'arabesque ([arabesque](http://arabesque.ifsttar.fr/)), sélectionnez au moins un ensemble de données de flux.
 
 ![](https://i.imgur.com/7ovFJ1V.png)
 
-### 1.2. Node dataset
+### 1.2. Données géographiques
 
-If you have locationnal data associated to your OD links, you can load the corresponding nodes files  by "**import Location**", else you can "**Preset Location**".
+Si vous avez des données de localisation associées à vos OD, vous pouvez charger les fichiers de nœuds correspondants par "**import Location**", sinon vous pouvez "**Preset Location**".
 
-#### 1.2.1. **Import Location**
+#### 1.2.1. **Importer ces données de localisation**
 
-If selecting "**Import Location**", you have to load a GEOJSON file, then choose the nodes ID and their lat/long geographical coordinates
+Si vous sélectionnez "**Import Location**", vous devez charger un fichier GEOJSON ou csv, puis choisir l'ID des nœuds et leurs coordonnées géographiques lat/long.
 
 ![](https://i.imgur.com/RAIFQ3t.png)
 
-#### 1.2.2. **Preset Location**
+#### 1.2.2. **Localisation prédéfinie**
 
-When selecting "**Preset Location**", you just have to choose the corresponding geonumerical nodes level, region and code (if available yet,otherwise you need to load your own node file). 
+Lorsque vous sélectionnez "**Preset Location**", il vous suffit de choisir le niveau, la région et le code des nœuds géo-numériques correspondants (si disponible). 
 
 ![](https://i.imgur.com/c1kEI4g.png)
 
 ![](https://i.imgur.com/wUzQPCM.png)
 
-After loading the links and nodes files,the application automatically performs an attribute join between the two files. 
+Après le chargement des fichiers de liens et de nœuds, l'application effectue automatiquement une jointure d'attribut entre les deux fichiers. 
 
-Links that do not have an origin or destination ID are automatically deleted, similarly for the nodes.
+Les liens qui n'ont pas d'ID d'origine ou de destination sont automatiquement supprimés, de même pour les nœuds.
 
-The complete list of removed is then proposed, only for viewing - so you must copy it if you want to keep the list
+La liste complète des noueds, liens supprimés est alors affichée, uniquement pour consultation - vous devez donc la copier si vous souhaitez conserver la liste.
 
 ![](https://i.imgur.com/ID0iSq6.png)
 
-By clicking ok, you enter directly in the arabesque interface.
-
 ## 2. Présentation de l'interface
 
-After loading the data, you enter you enter directly into the application, which offers a first map with default settings.
+Après avoir chargé les données, vous entrez directement dans l'application, qui propose une première carte avec les paramètres par défaut.
 
 ![](https://i.imgur.com/vzw3sW0.png)
 
-The interface is composed of the following two sections.
+L'interface est composée des deux sections suivantes.
 
 ## 2.1. Panneau de gauche
 
