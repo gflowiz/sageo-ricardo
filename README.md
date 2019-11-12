@@ -6,7 +6,7 @@
 
 **Réalisation :** Equipe gflowiz, 2019.
 
-**Licence :** CC-BY-SA 3.0-FR.
+**Licence :** [CC-BY-SA 3.0-FR](https://creativecommons.org/licenses/by-nc-sa/3.0/fr/).
 
 
 ## Introduction générale
