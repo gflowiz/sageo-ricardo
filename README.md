@@ -5,19 +5,39 @@
 *Arabesque* quick tutorial (v.0)
 
 
-## Contents
-
-[TOC]
-
 ## Introduction générale
 
-***arabesque*** est une application web de cartographie thématique des flux développée dans le cadre du projet gflowiz. Voir : https://geoflowiz.hypotheses.org pour plus de détails. 
+***arabesque*** est une application web de cartographie thématique des flux développée dans le cadre du projet gflowiz. (Voir [le blog du projet](https://geoflowiz.hypotheses.org) pour plus de détails. 
 
-arabesque est disponible gratuitement à l'adresse suivante : http://arabesque.ifsttar.fr/ 
+Arabesque est disponible gratuitement à l'adresse suivante : [http://arabesque.ifsttar.fr/](http://arabesque.ifsttar.fr/) 
 
-Il fonctionne avec Chromium et Mozilla 
+Il fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
 
-La documentation générale (travaux en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
+Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répértoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponnibles dans ce dépôts et on la structure suivante :
+
+- [SAGEO_RICardo_nodes.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_nodes.csv) : fichiers de localisation géographique des entités
+	- id (identifiant de l'entité géographique)
+	- name (nom de l'entité géographique)
+	- type (type de l'entité : country, city, ...)
+	- continent (continent)
+	- lat (latitude)
+	- long (longitude)
+
+- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historique
+	- idorigine (identifiant de l'entité d'origine du flux)
+	- iddestination (identifiant de l'entité de destination du flux)
+	- volume (volume financier du flux en Livre sterling)
+	- decennie (décennie conernée par le flux)
+
+
+- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique
+	- idorigine (identifiant de l'entité d'origine du flux)
+	- iddestination (identifiant de l'entité de destination du flux)
+	- volume (volume financier du flux en Livre sterling)
+	- annee (année de l'échange)
+	- péiode (période de l'échange)
+	- decennie (décennie de l'échange)
+
 
 
 
@@ -39,9 +59,6 @@ Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux
 
 ![](https://i.imgur.com/LdUeTbj.png)
 
-Pour ce tutoriel, nous avons utilisé les déplacements nationaux français en 2015 (flux jusqu'à 100 navetteurs).
-
-Source : Mobilités professionnelles en 2015 : déplacements domicile - lieu de travailRecensement de la population - Base flux de mobilité (INSEE, 2015). https://www.insee.fr/fr/statistiques/fichier/3566477/base-excel-flux-mobilite-domicile-lieu-travail-2015.zip
 
 #### 1.1 Données OD
 
