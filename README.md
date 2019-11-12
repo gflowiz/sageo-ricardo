@@ -23,19 +23,19 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 	- lat (latitude)
 	- long (longitude)
 
-- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historique agrégés pour réduire la taille du jeu de données
+- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historique
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
-	- decennie (décennie concernée par le flux)
+	- decennie (décennie conernée par le flux)
 
 
-- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique non agrégés
+- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
 	- annee (année de l'échange)
-	- periode (période de l'échange)
+	- péiode (période de l'échange)
 	- decennie (décennie de l'échange)
 
 
@@ -57,11 +57,11 @@ Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux
 
 ![](https://i.imgur.com/LdUeTbj.png)
 
-#### 1.1 Données OD (Origine/Destination)
+#### 1.1 Données OD
 
-Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien au format CSV (séparateur : virgule) en format long. 
+Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien.CSV (séparateur : virgule) en format long. 
 
-Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : identifiants des lieux d'origine, des lieux de destination et valeurs de flux. 
+Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : ceux correspondant aux lieux d'origine, aux lieux de destination et aux valeurs de flux. 
 
 Si la matrice OD est temporelle ou disponible pour différentes catégories, vous devez également choisir une méthode d'agrégation.
 
@@ -91,7 +91,7 @@ Après le chargement des fichiers de liens et de nœuds, l'application effectue 
 
 Les liens qui n'ont pas d'ID d'origine ou de destination sont automatiquement supprimés, de même pour les nœuds.
 
-La liste des noeuds et liens supprimés est alors affichée, uniquement pour consultation - vous devez donc la copier si vous souhaitez conserver la liste.
+La liste complète des noueds, liens supprimés est alors affichée, uniquement pour consultation - vous devez donc la copier si vous souhaitez conserver la liste.
 
 ![](https://i.imgur.com/ID0iSq6.png)
 
@@ -99,13 +99,13 @@ La liste des noeuds et liens supprimés est alors affichée, uniquement pour con
 
 ### Calcul automatique d'indicateurs
 
-Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée au format CSV (Voir sections Export et sauvegarde):
+Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée CSV (Voir sections Export et sauvegarde):
 
 **Indicateurs sur les liens :**
 distance euclidienne entre les entités d'origine et de destination
 
 **Indicateurs sur les noeuds :**
-Exemple d'indicateurs additionnels calculés sur les noeuds (données RICardo)
+Exemple d'indicateurs additionnels calculés sur les noeuds (données RIcardo)
 
 ![](https://i.imgur.com/ygefevd.png)
 
@@ -152,11 +152,13 @@ Elle présente en outre différents boutons permettant la mise en oeuvre d'actio
 
 ![](https://i.imgur.com/dyE0LNv.png) Bouton permettant d'afficher / masquer la légende.
 
+![](https://i.imgur.com/PH3ohE5.png) Bouton permettant de passer en mode d'affichage en plein écran - avec fond noir.
+
 ![](https://i.imgur.com/vVdZkTe.png) Bouton permettant d'ouvrir ou de fermer les panneaux  situés de chaque coté de la carte.
 
 ### 2.2.2. Légende
 
-Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicateurs présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
+Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicaters présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
 
 
 ## 2.3. Panneau de droite
@@ -204,7 +206,6 @@ La symbologie des noeuds consiste à paramétrer leur dessin, et à appliquer de
 
 **Couleur / Fixe** :
 La teinte est identique pour tous les noeuds.
-
 ![](https://i.imgur.com/9vC9K7s.png)
 
 **Application sur les noeuds** : symbolisation des noeuds (barycentre des zones) avec une *forme* cercle (choix unique) de *taille* fixée et de teinte unique noire.
@@ -224,7 +225,6 @@ Idéalement, il est nécessaire de paramétrer simultanément la taille des noeu
 
 **Taille / Fixe** :
 La taille (surface) des noeuds est identique pour tous et fixée sur une valeur donnée.
-
 ![](https://i.imgur.com/hhNWGt0.png)
 
 **Taille / Variable** 
@@ -242,7 +242,7 @@ Une étiquette, correspondant aux modalités d'un des champs du jeu de données,
 ![](https://i.imgur.com/qjg23Xc.png)
 
 ### 5.1.4. Opacité
-L'opacité consiste à agir sur le degré de transparence d'une teinte.
+L'opacité consite à agir sur le degré de transparence d'une teinte.
 
 **Opacité / Fixe** :
 L'opacité de la teinte des noeuds est identique pour tous les noeuds, elle est paramétrable, entre 0 et 1.
@@ -254,19 +254,16 @@ L'opacité de la teinte des noeuds est variable, en fonction d'un caractère (ic
 
 ![](https://i.imgur.com/2zhzEth.png)
 
-**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
-
+**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille* *variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
 ![](https://i.imgur.com/UxOvM50.png)
 
 
 ## 5.2. Symbolisation des liens
-
 ![](https://i.imgur.com/FrioZff.png)
 
 La symbologie des liens consiste à paramétrer leur dessin, et à appliquer des variables visuelles permettant d'enrichir qualitativement la carte. 
 
 Exemple: lien droits bilatéraux orientés, teinte noire unique 
-
 ![](https://i.imgur.com/QLhHhIu.png)
 
 ## 5.2.1. Géometrie
@@ -287,27 +284,22 @@ Le *type* de la géométrie correspond à l'application de la (variable visuelle
 
 **Type / Droit** 
 Le lien est rectilinéaire et orienté, grâce à une demi-tête de flèche
-
 ![](https://i.imgur.com/oZeAQh3.png)
 
 **Type / Droit sans crochet**
 Le lien est rectilinéaire et orienté, il présente une pointe sans crochet
-
 ![](https://i.imgur.com/AV8uFxA.png)
 
 **Type / Triangle**
 Le lien est rectilinéaire et prend la forme d'un triangle
-
 ![](https://i.imgur.com/4zLzaXE.png)
 
 **Type / courbe**
 Le lien est courbe et orienté, sa courbure est paramétrable.
-
 ![](https://i.imgur.com/rjcZ9nj.png)
 
 **Type / Triangle courbe**
 Le lien est courbe et prend la forme d'une goutte d'eau, sa courbure est paramétrable.
-
 ![](https://i.imgur.com/1vYWl6V.png)
 
 ## 5.2.3. Flèche (*Arrow*)
@@ -372,14 +364,12 @@ Il est également possible d'importer un fond en indiquant son URL : ![](https:/
 -- Ajout d'une *bounding box*, symbolisation graphique et disposition en arrière-plan (voir section Gestion des dispositions).
 ![](https://i.imgur.com/Vw1HWsA.png)
 
--- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions).
-
+-- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions). 
 ![](https://i.imgur.com/e5A8SU4.png)
 
 ![](https://i.imgur.com/Kwpl7fg.png)
 
 -- Ajout d'une couche *land* (espaces continentaux), symbolisation graphique et placement au-dessus de la couche graticules_20
-
 ![](https://i.imgur.com/45HJTPe.png)
 
 ![](https://i.imgur.com/EHOCgSR.png)
@@ -395,12 +385,10 @@ Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 ![](https://i.imgur.com/ENIQ2fm.png)
 
 .. et par type de tuile (texte - Fond de carte)
-
 ![](https://i.imgur.com/AK27WOr.png)
 
 
 ### 5.3.2. Exemple de chargement de tuiles
-
 1. Selectionner Carto_basemap dans **Type**
 2. Selectionner Carto_Dark_NoLabel dans **tiles**
 3. Cliquer sur ![](https://i.imgur.com/3l7BA9c.png)
@@ -413,10 +401,9 @@ Il est également possible d'ajouter ses propres tuiles *via* un géo serveur, e
   
   
 ## 5.5. Import d'une couche .GEOJSON
-
 ![](https://i.imgur.com/UuZhMyC.png)
 
-Quelle que soit l'échelle (mondiale, régionale ou locale) il est possible d'ajouter un fond de carte vectoriel quelconque, au format geojson.
+Quelle que soit l'échelle (mondiale, régionale ou locale) il est possible d'ajouter un fond de carte vectoriel quelcoque, au format geojson.
 
 Pour cela,il faut charger son ficher et le nommer.
 
@@ -482,19 +469,69 @@ Le bouton ![](https://i.imgur.com/Qwi9fas.png) permet de modifier le style des f
 
 # 8. Filtrage des couches numériques
 
-![](https://i.imgur.com/6E2Tgpg.png)
-
-
-Le filtrage numérique s’applique aux données de flux (liens ou noeuds) 
-
-![](https://i.imgur.com/8w3HdbN.png)
-
->> Sélection des variables
-
 Il est réalisé soit visuellement à l’aide d’une fenêtre de sélection sur un histogramme interactif à fenêtre coulissante (*slider*), soit de manière numérique (en indiquant un seuil). 
 
 La part d’information sélectionnée, les valeurs minimales et maximales sont indiquées automatiquement sur la figure. Pour les liens, la possibilité d’un filtrage selon la distance géodésique parcourue est en outre proposée.
 
+![](https://i.imgur.com/6E2Tgpg.png)
+
+**Application sur la vue en cours**
+L'affichage des filtres par défaut est le suivant.
+
+![](https://i.imgur.com/1zSEsXa.png)
+
+L'application précise littéralement les valeurs de filtrage :
+-- la part en pourcentage de liens (figurés) représentée (ici 10% de l'ensemble des liens)
+-- la part en pourcentage du total de l'information de flux (valeur) représentée (83,5%)
+-- la part en pourcentage de l'ensemble des noeuds : 36,5%
+
+>>***Commentaire*** : *84% de l'information de flux est échangée entre 36% des lieux qui représentent les 10% de liens les plus forts, en volume - seul un tiers des lieux est impliqué dans ces échanges.*
+
+## 8.1. Filtrage numérique
+Il est possible de modifier ces paramètres de filtrage, en agissant sur les données de flux (liens ou noeuds)
+
+![](https://i.imgur.com/8w3HdbN.png)
+
+### 8.1.1. Modification des paramètres de filtrage sur le volume
+
+-- Représentation de l'ensemble des échanges
+![](https://i.imgur.com/050JPXs.png)
+
+-- Sélection des 25% des échanges les plus importants,soit 8% des noeuds et 0,6% des liens les plus forts
+
+![](https://i.imgur.com/wCrEodP.png)
+
+-- Sélection des 50% des échanges les plus importants,soit 14% des noeuds et 2% des liens les plus forts
+
+![](https://i.imgur.com/b2IrUaK.png)
+
+### 8.1.2. Création d'un filtre sur les liens, selon la distance parcourue
+
+![](https://i.imgur.com/1csaKil.png)
+
+![](https://i.imgur.com/ujHbtWE.png)
+
+-- Modification des paramètres de distance parcourue
+
+Sélection des flux parcourant entre 4000 et 12000 kilomètres
+
+![](https://i.imgur.com/iWPJh5W.png)
+
+-- Résultat
+
+>> ***Commentaire*** : la sélection des flux commerciaux qui parcourent de l'ordre de 4000 à 12000 kilomètres de distance correspond aux flux commerciaux à moyenne distance, qui s'expriment principalement dans l'hémisphère nord..
+Ces flux de moyenne distance représentent 34% du volume total de marchandises qui correspond à 25% des relations financières commerciales les plus importantes, qui s'expriment entre 4% des pays les plus riches. 
+On notera que seules l'Amérique du nord et des pays de l'Europe de l'ouest sont impliqués dans ces échanges - dont on rappelle qu'ils correspondent au cumul des valeurs observées sur l'ensemble de la période.
+
+![](https://i.imgur.com/Yst7lLx.png)
+
+## 8.2. Filtrage temporel
+Les données étant découpées dans le temps, il est possible de sélectionner une ou plusieurs dates à représenter. 
+Les paramètres décrivant la part d'information représentée sont alors actualisés.
+
+**Application sur la vue en cours**
+
+![](https://i.imgur.com/zOBliM3.png)
 
 # 9. Export et sauvegarde
 
