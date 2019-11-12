@@ -11,9 +11,9 @@
 
 Arabesque est disponible gratuitement à l'adresse suivante : [http://arabesque.ifsttar.fr/](http://arabesque.ifsttar.fr/) 
 
-Il fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
+Elle fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
 
-Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répértoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponnibles dans ce dépôt et ont la structure suivante :
+Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponibles dans ce dépôt et ont la structure suivante :
 
 - [SAGEO_RICardo_nodes.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_nodes.csv) : fichiers de localisation géographique des entités
 	- id (identifiant de l'entité géographique)
@@ -39,14 +39,12 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répérto
 	- decennie (décennie de l'échange)
 
 
+***arabesque*** vous permet également d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
+
+La réalisation d'une carte de flux avec arabesque se décompose en 5 grandes étapes :
 
 
-***arabesque*** vous permet d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
-
-La réalisation d'une cartede flux avec arabesque se décompose en 5 grandes étapes :
-
-
-1 : Importation des données de flux
+1 : Importation des données de flux (liens et/ou noeuds)
 2 : Traitement des données de flux (création d'indicateurs, statistiques)
 3 : Exploration et filtrage des données
 4 : Symbolisation graphique
@@ -58,7 +56,6 @@ La réalisation d'une cartede flux avec arabesque se décompose en 5 grandes ét
 Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux de données fournis comme exemple dans la section **Démo**. 
 
 ![](https://i.imgur.com/LdUeTbj.png)
-
 
 #### 1.1 Données OD
 
@@ -453,23 +450,6 @@ La part d’information sélectionnée, les valeurs minimales et maximales sont 
 Pour ouvrir une carte sauvegardée, il faut charger le fichier .ZIP de sauvegarde - et ne pas l'avoir modifié entre temps.
 ![](https://i.imgur.com/Chfa3pP.png) 
 
-
-
-arabesque glossaire (english/french)
-===
-
-
-
-
-
-
-
-
-## arabesque ToDoList and FAQ
-
-:::info
-**Find this document incomplete?** Leave a comment!
-:::
 
 ###### tags: `Templates` `Documentation` `tutorial` `arabesque` `gflowiz`
 
