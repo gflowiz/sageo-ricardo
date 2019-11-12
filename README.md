@@ -15,7 +15,7 @@
 
 Arabesque est disponible gratuitement à l'adresse suivante : [http://arabesque.ifsttar.fr/](http://arabesque.ifsttar.fr/) 
 
-Elle fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
+Elle fonctionne avec Chromium et Mozilla. La [documentation générale (travail en cours)](https://gflowiz.github.io/arabesque/) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
 
 Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponibles dans ce dépôt et ont la structure suivante :
 
@@ -27,14 +27,14 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 	- lat (latitude)
 	- long (longitude)
 
-- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historique
+- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historiques agrégés (pour réduire la taille du jeu de données)
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
 	- decennie (décennie concernée par le flux)
 
 
-- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique
+- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historiques non agrégés
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
@@ -48,20 +48,20 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 La réalisation d'une carte de flux avec arabesque se décompose en 5 grandes étapes :
 
 
-1 : Importation des données de flux (liens et/ou noeuds)
-2 : Traitement des données de flux (création d'indicateurs, statistiques)
-3 : Exploration et filtrage des données
-4 : Symbolisation graphique
-5 : Exportation
+1. Importation des données de flux (liens et/ou noeuds)
+2. Traitement des données de flux (création d'indicateurs, statistiques)
+3. Exploration et filtrage des données
+4. Symbolisation graphique
+5. Exportation
 
 
 ## 1. Importation de données
 
-Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux de données fournis comme exemple dans la section **Démo**. 
+Pour une première découverte d' ***Arabesque***, vous pouvez utiliser les jeux de données fournis comme exemple dans la section **Démo**. 
 
 ![](https://i.imgur.com/LdUeTbj.png)
 
-#### 1.1 Données OD
+#### 1.1 Données OD (Origine/Destination)
 
 Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien. au format CSV (séparateur : virgule) et format long. 
 
@@ -69,25 +69,27 @@ Vous devez également déclarer les 3 champs minimums requis pour la cartographi
 
 Si la matrice OD est temporelle ou disponible pour différentes catégories, vous devez également choisir une méthode d'agrégation.
 
-Sur la page d'accueil d'arabesque ([arabesque](http://arabesque.ifsttar.fr/)), sélectionnez au moins un ensemble de données de flux.
+Sur la page d'accueil d'([Arabesque](http://arabesque.ifsttar.fr/)), chargez au moins un ensemble de données de flux.
 
 ![](https://i.imgur.com/BjvHVHn.png)
 
 **Application**
+
 Chargement des données *SAGEO_RICardo_edges_small.csv*
 
 ![](https://i.imgur.com/GjzU9IE.png)
 
 ### 1.2. Données géographiques
 
-Si vous avez des données de localisation associées à vos OD, vous pouvez charger les fichiers de nœuds correspondants par "**import Location**", sinon vous pouvez "**Preset Location**".
+Si vous avez des données de localisation associées à vos OD, vous pouvez charger les fichiers de nœuds correspondants par "**import Location**", sinon vous pouvez utiliser des localisations pré-définies avec "**Preset Location**".
 
-#### 1.2.1. **Importer ces données de localisation**
+#### 1.2.1. **Importer les données de localisation**
 
-Si vous sélectionnez "**Import Location**", vous devez charger un fichier GEOJSON ou csv, puis choisir l'ID des nœuds et leurs coordonnées géographiques lat/long.
+Si vous sélectionnez "**Import Location**", vous devez charger un fichier GEOJSON ou CSV, puis choisir l'ID des nœuds et leurs coordonnées géographiques lat/long.
 
 **Application**
-Chargement des données *SAGEORICardonodes.csv*
+
+Chargement des données *SAGEO_RICardo_nodes.csv*
 
 ![](https://i.imgur.com/MMhQw1E.png)
 
@@ -103,7 +105,7 @@ Après le chargement des fichiers de liens et de nœuds, l'application effectue 
 
 Les liens qui n'ont pas d'ID d'origine ou de destination sont automatiquement supprimés, de même pour les nœuds.
 
-La liste complète des noueds, liens supprimés est alors affichée, uniquement pour consultation - vous devez donc la copier si vous souhaitez conserver la liste.
+La liste des noeuds et liens supprimés est alors affichée, uniquement pour consultation - vous devez la copier si vous souhaitez conserver la liste.
 
 ![](https://i.imgur.com/ID0iSq6.png)
 
@@ -111,7 +113,7 @@ La liste complète des noueds, liens supprimés est alors affichée, uniquement 
 
 ### Calcul automatique d'indicateurs
 
-Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée CSV (Voir sections Export et sauvegarde):
+Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée au format CSV (Voir sections Export et sauvegarde):
 
 **Indicateurs sur les liens :**
 distance euclidienne entre les entités d'origine et de destination
@@ -132,14 +134,18 @@ L'interface est composée des deux panneaux suivantes.
 ## 2.1. Panneau de gauche
 
 La gestion des couches est réalisée sur la partie de gauche de l'interface. Elle composée de deux sous-parties:
--- Projections
--- Titre
--- Gestion et symbolisation des couches (*Add Layers*)
 
-Manipulation, disposition et affichage des couches
--- Liens
--- Noeuds
--- autres couches
+### Généralités
+
+- Projections
+- Titre
+- Gestion et symbolisation des couches (*Add Layers*)
+
+### Manipulation, disposition et affichage des couches
+
+- Liens
+- Noeuds
+- autres couches
 
 
 ## 2.2. Partie centrale de l'interface
@@ -150,13 +156,13 @@ Elle présente en outre différents boutons permettant la mise en oeuvre d'actio
 
 ### 2.2.1. Actions primaires
 
-![](https://i.imgur.com/UpnYI1v.png) Icône permettant de revenir à la page d'accueil arabesque.ifsttar.fr pour commencer une nouvelle visualisation.
+![](https://i.imgur.com/UpnYI1v.png) Icône permettant de revenir à la [page d'accueil](arabesque.ifsttar.fr) pour commencer une nouvelle visualisation.
 
-![](https://i.imgur.com/Yxwnchy.png)Boutons permettant de réaliser successivement des zooms avant et après de la vue - de la même façon qu'avec la molette de la souris.
+![](https://i.imgur.com/Yxwnchy.png) Boutons permettant de réaliser successivement des zooms avant et après de la vue - de la même façon qu'avec la molette de la souris.
 
 ![](https://i.imgur.com/YEVxD9F.png) Bouton permettant de sauvegarder le projet pour pouvoir l'utiliser ultérieurement.
 
-![](https://i.imgur.com/SFBC4Vj.png) Bouton visant à exporter la carte au format image (.PNG), en inclant les légendes et les sources des contributeurs pour les fonds externes tels que *NaturalEarth*, par exemple.
+![](https://i.imgur.com/SFBC4Vj.png) Bouton visant à exporter la carte au format image (.PNG), en incluant les légendes et les sources des contributeurs pour les fonds externes tels que *NaturalEarth*, par exemple.
 
 ![](https://i.imgur.com/mGCeFIv.png) Bouton entraînant le recentrage et l'affichage de l'emprise totale des flux - sans zoomer/dé zoomer ni paner.
 
@@ -170,13 +176,13 @@ Elle présente en outre différents boutons permettant la mise en oeuvre d'actio
 
 ### 2.2.2. Légende
 
-Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicaters présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
+Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicateurs présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
 
 
 ## 2.3. Panneau de droite
 **L'exploration et le filtrage** des données est effectuée sur la partie droite. 
 
-Elle permet d'agir sur n'importe laquelle des variables caractérisant les noeuds et/ou les liens et/ou  la distance parcourue par les flux (variable calculée lors du chargement des données). 
+Elle permet d'agir sur n'importe laquelle des variables caractérisant les noeuds et/ou les liens et/ou la distance parcourue par les flux (variable calculée lors du chargement des données). 
 
 Les résultats de l'application d'un ou de plusieurs filtres sont proposés par défaut en tête du panneau.
 
@@ -354,10 +360,10 @@ Paramètres :
 
 Carte résultat :
 
--- Sommets placés sous les noeuds
+- Sommets placés sous les noeuds
 ![](https://i.imgur.com/mSOYw2m.png)
 
--- Sommets placés sur les noeuds (voir section gestion des dispositions)
+- Sommets placés sur les noeuds (voir section gestion des dispositions)
 ![](https://i.imgur.com/Jn0EtxU.png)
 
 ## 5.4. Ajout d'un fond géonumérique
@@ -373,15 +379,18 @@ La symbolisation de ce nouveau fond d'habillage peut être modifiée en paramét
 Il est également possible d'importer un fond en indiquant son URL : ![](https://i.imgur.com/SQPqh0V.png)
 
 **Applications sur la vue en cours**
--- Ajout d'une *bounding box*, symbolisation graphique et disposition en arrière-plan (voir section Gestion des dispositions).
+
+- Ajout d'une *bounding box*, symbolisation graphique et disposition en arrière-plan (voir section Gestion des dispositions).
 ![](https://i.imgur.com/Vw1HWsA.png)
 
--- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions). 
+- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions). 
+
 ![](https://i.imgur.com/e5A8SU4.png)
 
 ![](https://i.imgur.com/Kwpl7fg.png)
 
--- Ajout d'une couche *land* (espaces continentaux), symbolisation graphique et placement au-dessus de la couche graticules_20
+- Ajout d'une couche *land* (espaces continentaux), symbolisation graphique et placement au-dessus de la couche graticules_20
+
 ![](https://i.imgur.com/45HJTPe.png)
 
 ![](https://i.imgur.com/EHOCgSR.png)
@@ -401,6 +410,7 @@ Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 
 
 ### 5.3.2. Exemple de chargement de tuiles
+
 1. Selectionner Carto_basemap dans **Type**
 2. Selectionner Carto_Dark_NoLabel dans **tiles**
 3. Cliquer sur ![](https://i.imgur.com/3l7BA9c.png)
@@ -488,9 +498,10 @@ L'affichage des filtres par défaut est le suivant.
 ![](https://i.imgur.com/1zSEsXa.png)
 
 L'application précise littéralement les valeurs de filtrage :
--- la part en pourcentage de liens (figurés) représentée (ici 10% de l'ensemble des liens)
--- la part en pourcentage du total de l'information de flux (valeur) représentée (83,5%)
--- la part en pourcentage de l'ensemble des noeuds : 36,5%
+
+- la part en pourcentage de liens (figurés) représentée (ici 10% de l'ensemble des liens)
+- la part en pourcentage du total de l'information de flux (valeur) représentée (83,5%)
+- la part en pourcentage de l'ensemble des noeuds : 36,5%
 
 >>***Commentaire*** : *84% de l'information de flux est échangée entre 36% des lieux qui représentent les 10% de liens les plus forts, en volume - seul un tiers des lieux est impliqué dans ces échanges.*
 
@@ -501,14 +512,14 @@ Il est possible de modifier ces paramètres de filtrage, en agissant sur les don
 
 ### 8.1.1. Modification des paramètres de filtrage sur le volume
 
--- Représentation de l'ensemble des échanges
+- Représentation de l'ensemble des échanges
 ![](https://i.imgur.com/050JPXs.png)
 
--- Sélection des 25% des échanges les plus importants,soit 8% des noeuds et 0,6% des liens les plus forts
+- Sélection des 25% des échanges les plus importants,soit 8% des noeuds et 0,6% des liens les plus forts
 
 ![](https://i.imgur.com/wCrEodP.png)
 
--- Sélection des 50% des échanges les plus importants,soit 14% des noeuds et 2% des liens les plus forts
+- Sélection des 50% des échanges les plus importants,soit 14% des noeuds et 2% des liens les plus forts
 
 ![](https://i.imgur.com/b2IrUaK.png)
 
@@ -518,13 +529,13 @@ Il est possible de modifier ces paramètres de filtrage, en agissant sur les don
 
 ![](https://i.imgur.com/ujHbtWE.png)
 
--- Modification des paramètres de distance parcourue
+- Modification des paramètres de distance parcourue
 
 Sélection des flux parcourant entre 4000 et 12000 kilomètres
 
 ![](https://i.imgur.com/iWPJh5W.png)
 
--- Résultat
+- Résultat
 
 >> ***Commentaire*** : la sélection des flux commerciaux qui parcourent de l'ordre de 4000 à 12000 kilomètres de distance correspond aux flux commerciaux à moyenne distance, qui s'expriment principalement dans l'hémisphère nord..
 Ces flux de moyenne distance représentent 34% du volume total de marchandises qui correspond à 25% des relations financières commerciales les plus importantes, qui s'expriment entre 4% des pays les plus riches. 
@@ -545,9 +556,10 @@ Volume total échangé supérieur à 47 millions (paramètre empirique, pris au 
 
 ![](https://i.imgur.com/J0C06iJ.png)
 
->> Commentaire : les échanges qui s'expriment à moyenne voire longue distance (moins de 8000 km environ) et qui représentent plus de 48 millions de livres sterling échangés correspondent à 50% du total de ces interactions commerciales qui sont réalisées entre les 16% de noeuds les plus importants.
+>> **Commentaire** : les échanges qui s'expriment à moyenne voire longue distance (moins de 8000 km environ) et qui représentent plus de 48 millions de livres sterling échangés correspondent à 50% du total de ces interactions commerciales qui sont réalisées entre les 16% de noeuds les plus importants.
 
 ## 8.2. Filtrage temporel
+
 Les données étant découpées dans le temps, il est possible de sélectionner une ou plusieurs dates à représenter. 
 Les paramètres décrivant la part d'information représentée sont alors actualisés.
 
