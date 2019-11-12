@@ -11,9 +11,9 @@
 
 Arabesque est disponible gratuitement à l'adresse suivante : [http://arabesque.ifsttar.fr/](http://arabesque.ifsttar.fr/) 
 
-Il fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
+Elle fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
 
-Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répértoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponnibles dans ce dépôt et ont la structure suivante :
+Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponibles dans ce dépôt et ont la structure suivante :
 
 - [SAGEO_RICardo_nodes.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_nodes.csv) : fichiers de localisation géographique des entités
 	- id (identifiant de l'entité géographique)
@@ -39,14 +39,12 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répérto
 	- decennie (décennie de l'échange)
 
 
+***arabesque*** vous permet également d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
+
+La réalisation d'une carte de flux avec arabesque se décompose en 5 grandes étapes :
 
 
-***arabesque*** vous permet d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
-
-La réalisation d'une cartede flux avec arabesque se décompose en 5 grandes étapes :
-
-
-1 : Importation des données de flux
+1 : Importation des données de flux (liens et/ou noeuds)
 2 : Traitement des données de flux (création d'indicateurs, statistiques)
 3 : Exploration et filtrage des données
 4 : Symbolisation graphique
@@ -58,7 +56,6 @@ La réalisation d'une cartede flux avec arabesque se décompose en 5 grandes ét
 Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux de données fournis comme exemple dans la section **Démo**. 
 
 ![](https://i.imgur.com/LdUeTbj.png)
-
 
 #### 1.1 Données OD
 
@@ -100,11 +97,25 @@ La liste complète des noueds, liens supprimés est alors affichée, uniquement 
 
 ## 2. Présentation de l'interface
 
-Après avoir chargé les données, vous entrez directement dans l'application, qui propose une première carte avec les paramètres par défaut.
+### Calcul automatique d'indicateurs
+
+Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée CSV (Voir sections Export et sauvegarde):
+
+**Indicateurs sur les liens :**
+distance euclidienne entre les entités d'origine et de destination
+
+**Indicateurs sur les noeuds :**
+Exemple d'indicateurs additionnels calculés sur les noeuds (données RIcardo)
+
+![](https://i.imgur.com/ygefevd.png)
+
+### Symbolisation automatique
+
+Carte réalisée par défaut lors de l'arrivée sur l'interface.
 
 ![](https://i.imgur.com/vzw3sW0.png)
 
-L'interface est composée des deux sections suivantes.
+L'interface est composée des deux panneaux suivantes.
 
 ## 2.1. Panneau de gauche
 
@@ -195,6 +206,8 @@ La symbologie des noeuds consiste à paramétrer leur dessin, et à appliquer de
 La teinte est identique pour tous les noeuds.
 ![](https://i.imgur.com/9vC9K7s.png)
 
+**Application sur les noeuds** : symbolisation des noeuds (barycentre des zones) avec une *forme* cercle (choix unique) de *taille* fixée et de teinte unique noire.
+
 ![](https://i.imgur.com/j8Zm1b8.png)
 
 **Couleur / Variable** : 
@@ -239,7 +252,7 @@ L'opacité de la teinte des noeuds est variable, en fonction d'un caractère (ic
 
 ![](https://i.imgur.com/2zhzEth.png)
 
-Exemple : Résultat 
+**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille* *variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
 ![](https://i.imgur.com/UxOvM50.png)
 
 
@@ -247,6 +260,9 @@ Exemple : Résultat
 ![](https://i.imgur.com/FrioZff.png)
 
 La symbologie des liens consiste à paramétrer leur dessin, et à appliquer des variables visuelles permettant d'enrichir qualitativement la carte. 
+
+Exemple: lien droits bilatéraux orientés, teinte noire unique 
+![](https://i.imgur.com/QLhHhIu.png)
 
 ## 5.2.1. Géometrie
 
@@ -314,10 +330,21 @@ Idéalement, il est nécessaire de paramétrer simultanément la *taille* des li
 ![](https://i.imgur.com/B0xJk9K.png)
 
 
-
 ![](https://i.imgur.com/6UvEj9J.png)
 
 
+**Application sur les liens** : symbolisation des liens avec une *forme* *triangle* *courbe* avec une *couleur* *variable* selon une fonction linéaire et présentant une variation *d'opacité*
+
+Paramètres : 
+![](https://i.imgur.com/orgWxLd.png)
+
+Carte résultat :
+
+-- Sommets placés sous les noeuds
+![](https://i.imgur.com/mSOYw2m.png)
+
+-- Sommets placés sur les noeuds (voir section gestion des dispositions)
+![](https://i.imgur.com/Jn0EtxU.png)
 
 ## 5.4. Ajout d'un fond géonumérique
 
@@ -329,11 +356,21 @@ Différents fonds de carte ou éléments d'habillage vectoriels, préchargés so
  
 La symbolisation de ce nouveau fond d'habillage peut être modifiée en paramétrant l'apparence du dessin de ses contours et fonds, de sa teinte et de son opacité.
 
-Ex : choix d'ajouter une "bounding box" qui correspond à l'espace de définition de la carte, et symbolisation du fond en bleu.
-
-![](https://i.imgur.com/HUHohCU.png)
-
 Il est également possible d'importer un fond en indiquant son URL : ![](https://i.imgur.com/SQPqh0V.png)
+
+**Applications sur la vue en cours**
+-- Ajout d'une *bounding box*, symbolisation graphique et disposition en arrière-plan (voir section Gestion des dispositions).
+![](https://i.imgur.com/Vw1HWsA.png)
+
+-- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions). 
+![](https://i.imgur.com/e5A8SU4.png)
+
+![](https://i.imgur.com/Kwpl7fg.png)
+
+-- Ajout d'une couche *land* (espaces continentaux), symbolisation graphique et placement au-dessus de la couche graticules_20
+![](https://i.imgur.com/45HJTPe.png)
+
+![](https://i.imgur.com/EHOCgSR.png)
 
 ## 5.5. Ajout de couches de tuiles
 
@@ -341,11 +378,11 @@ Pour les données observées à l'échelle locale, il est possible d'ajouter des
 
 ![](https://i.imgur.com/nSUHJFe.png)
 
-Plusieurs tuiles sont proposées, elles sont triées par fournisseur 
+Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 
 ![](https://i.imgur.com/ENIQ2fm.png)
 
-et par type de tuile (texte - Fond de carte)
+.. et par type de tuile (texte - Fond de carte)
 ![](https://i.imgur.com/AK27WOr.png)
 
 
@@ -453,23 +490,6 @@ La part d’information sélectionnée, les valeurs minimales et maximales sont 
 Pour ouvrir une carte sauvegardée, il faut charger le fichier .ZIP de sauvegarde - et ne pas l'avoir modifié entre temps.
 ![](https://i.imgur.com/Chfa3pP.png) 
 
-
-
-arabesque glossaire (english/french)
-===
-
-
-
-
-
-
-
-
-## arabesque ToDoList and FAQ
-
-:::info
-**Find this document incomplete?** Leave a comment!
-:::
 
 ###### tags: `Templates` `Documentation` `tutorial` `arabesque` `gflowiz`
 
