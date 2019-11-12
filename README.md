@@ -409,7 +409,7 @@ Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 ![](https://i.imgur.com/AK27WOr.png)
 
 
-### 5.3.2. Exemple de chargement de tuiles
+### 5.5.1. Exemple de chargement de tuiles
 
 1. Selectionner Carto_basemap dans **Type**
 2. Selectionner Carto_Dark_NoLabel dans **tiles**
@@ -418,11 +418,11 @@ Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 5. Il faut ensuite gérer la disposition des couches pour parfaire l'affichage.
 
 
-### 5.3.3. Ajout de ses propres tuiles
+### 5.5.2. Ajout de ses propres tuiles
 Il est également possible d'ajouter ses propres tuiles *via* un géo serveur, en cliquant sur ![](https://i.imgur.com/E3zgsmo.png)
   
   
-## 5.5. Import d'une couche .GEOJSON
+## 6. Import d'une couche .GEOJSON
 ![](https://i.imgur.com/UuZhMyC.png)
 
 Quelle que soit l'échelle (mondiale, régionale ou locale) il est possible d'ajouter un fond de carte vectoriel quelcoque, au format geojson.
