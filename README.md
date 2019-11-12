@@ -5,7 +5,8 @@
 *Arabesque* quick tutorial (v.0)
 
 **Réalisation :** Equipe gflowiz, 2019.
-**Licence :** CC-BY-SA.
+
+**Licence :** CC-BY-SA 3.0-FR.
 
 
 ## Introduction générale
@@ -38,7 +39,7 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
 	- annee (année de l'échange)
-	- péiode (période de l'échange)
+	- periode (période de l'échange)
 	- decennie (décennie de l'échange)
 
 
@@ -62,7 +63,7 @@ Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux
 
 #### 1.1 Données OD
 
-Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien.CSV (séparateur : virgule) en format long. 
+Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien. au format CSV (séparateur : virgule) et format long. 
 
 Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : ceux correspondant aux lieux d'origine, aux lieux de destination et aux valeurs de flux. 
 
