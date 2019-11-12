@@ -11,7 +11,7 @@
 
 ## Introduction générale
 
-***arabesque*** est une application web de cartographie thématique des flux développée dans le cadre du projet gflowiz. (Voir [le blog du projet](https://geoflowiz.hypotheses.org) pour plus de détails. 
+***Arabesque*** est une application web de cartographie thématique des flux développée dans le cadre du projet gflowiz. (Voir [le blog du projet](https://geoflowiz.hypotheses.org) pour plus de détails. 
 
 Arabesque est disponible gratuitement à l'adresse suivante : [http://arabesque.ifsttar.fr/](http://arabesque.ifsttar.fr/) 
 
@@ -22,10 +22,10 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 - [SAGEO_RICardo_nodes.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_nodes.csv) : fichiers de localisation géographique des entités
 	- id (identifiant de l'entité géographique)
 	- name (nom de l'entité géographique)
-	- type (type de l'entité : country, city, ...)
-	- continent (continent)
-	- lat (latitude)
-	- long (longitude)
+	- type (type de l'entité : _country_, _city_, ...)
+	- continent (_continent_)
+	- lat (_latitude_)
+	- long (_longitude_)
 
 - [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historiques agrégés (pour réduire la taille du jeu de données)
 	- idorigine (identifiant de l'entité d'origine du flux)
@@ -43,12 +43,12 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 	- decennie (décennie de l'échange)
 
 
-***arabesque*** vous permet également d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
+***Arabesque*** vous permet également d'importer vos propres ensembles de données de flux, sous la forme d'une matrice origine-destination (format liste d'adjacence en CSV), de les explorer, de les filtrer pour créer une carte de flux lisible, en accord avec les principes de la sémiologie cartographique.
 
-La réalisation d'une carte de flux avec arabesque se décompose en 5 grandes étapes :
+La réalisation d'une carte de flux avec Arabesque se décompose en 5 grandes étapes :
 
 
-1. Importation des données de flux (liens et/ou noeuds)
+1. Importation des données de flux (liens et/ou nœuds)
 2. Traitement des données de flux (création d'indicateurs, statistiques)
 3. Exploration et filtrage des données
 4. Symbolisation graphique
@@ -63,7 +63,7 @@ Pour une première découverte d' ***Arabesque***, vous pouvez utiliser les jeux
 
 #### 1.1 Données OD (Origine/Destination)
 
-Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien. au format CSV (séparateur : virgule) et format long. 
+Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de liens au format CSV (séparateur : virgule) et format long. 
 
 Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : ceux correspondant aux lieux d'origine, aux lieux de destination et aux valeurs de flux. 
 
@@ -105,7 +105,7 @@ Après le chargement des fichiers de liens et de nœuds, l'application effectue 
 
 Les liens qui n'ont pas d'ID d'origine ou de destination sont automatiquement supprimés, de même pour les nœuds.
 
-La liste des noeuds et liens supprimés est alors affichée, uniquement pour consultation - vous devez la copier si vous souhaitez conserver la liste.
+La liste des nœuds et liens supprimés est alors affichée, uniquement pour consultation - vous devez la copier si vous souhaitez conserver la liste.
 
 ![](https://i.imgur.com/ID0iSq6.png)
 
@@ -118,8 +118,8 @@ Les jeux de données sont automatiquement modifiés lors de leur importation, l'
 **Indicateurs sur les liens :**
 distance euclidienne entre les entités d'origine et de destination
 
-**Indicateurs sur les noeuds :**
-Exemple d'indicateurs additionnels calculés sur les noeuds (données RIcardo)
+**Indicateurs sur les nœuds :**
+Exemple d'indicateurs additionnels calculés sur les nœuds (données RIcardo)
 
 ![](https://i.imgur.com/ygefevd.png)
 
@@ -144,13 +144,13 @@ La gestion des couches est réalisée sur la partie de gauche de l'interface. El
 ### Manipulation, disposition et affichage des couches
 
 - Liens
-- Noeuds
-- autres couches
+- Nœuds
+- Autres couches
 
 
 ## 2.2. Partie centrale de l'interface
 
-La partie centrale correspond à la vue cartographique. Elle résulte du choix des couches à afficher (réalisé sur la partie gauche) et du filtrage des valeurs des liens et des noeuds (réalisé sur la partie droite).
+La partie centrale correspond à la vue cartographique. Elle résulte du choix des couches à afficher (réalisé sur la partie gauche) et du filtrage des valeurs des liens et des nœuds (réalisé sur la partie droite).
 
 Elle présente en outre différents boutons permettant la mise en oeuvre d'actions primaires.
 
@@ -164,7 +164,7 @@ Elle présente en outre différents boutons permettant la mise en oeuvre d'actio
 
 ![](https://i.imgur.com/SFBC4Vj.png) Bouton visant à exporter la carte au format image (.PNG), en incluant les légendes et les sources des contributeurs pour les fonds externes tels que *NaturalEarth*, par exemple.
 
-![](https://i.imgur.com/mGCeFIv.png) Bouton entraînant le recentrage et l'affichage de l'emprise totale des flux - sans zoomer/dé zoomer ni paner.
+![](https://i.imgur.com/mGCeFIv.png) Bouton entraînant le recentrage et l'affichage de l'emprise totale des flux - sans zoomer/dézoomer ni paner.
 
 ![](https://i.imgur.com/imemU85.png) Bouton servant à exporter les données filtrées - celles qui sont visibles sur la carte - sous la forme d'un fichier liste au format .JSON.
 
@@ -172,17 +172,18 @@ Elle présente en outre différents boutons permettant la mise en oeuvre d'actio
 
 ![](https://i.imgur.com/PH3ohE5.png) Bouton permettant de passer en mode d'affichage en plein écran - avec fond noir.
 
-![](https://i.imgur.com/vVdZkTe.png) Bouton permettant d'ouvrir ou de fermer les panneaux  situés de chaque coté de la carte.
+![](https://i.imgur.com/vVdZkTe.png) Bouton permettant d'ouvrir ou de fermer les panneaux situés de chaque coté de la carte.
 
 ### 2.2.2. Légende
 
-Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicateurs présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
+Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicateurs présentés. Ici, le volume des flux et le degré des lieux. 
 
 
 ## 2.3. Panneau de droite
-**L'exploration et le filtrage** des données est effectuée sur la partie droite. 
 
-Elle permet d'agir sur n'importe laquelle des variables caractérisant les noeuds et/ou les liens et/ou la distance parcourue par les flux (variable calculée lors du chargement des données). 
+**L'exploration et le filtrage** des données sont effectués sur la partie droite.
+
+Elle permet d'agir sur n'importe quelle variables caractérisant les nœuds et/ou les liens et/ou la distance parcourue par les flux (variable calculée lors du chargement des données). 
 
 Les résultats de l'application d'un ou de plusieurs filtres sont proposés par défaut en tête du panneau.
 
@@ -215,38 +216,38 @@ Il est possible d'agir sur la symbolisation graphique des différentes couches d
 ![](https://i.imgur.com/8FmSnxG.png)
 
 
-## 5.1. Symbolisation des noeuds
+## 5.1. Symbolisation des nœuds
 ![](https://i.imgur.com/isQCzon.png)
 
-La symbologie des noeuds consiste à paramétrer leur dessin, et à appliquer des variables visuelles permettant d'enrichir qualitativement la carte. 
+La symbologie des nœuds consiste à paramétrer leur dessin, et à appliquer des variables visuelles permettant d'enrichir qualitativement la carte. 
 
 ### 5.1.1. Couleur
 
 **Couleur / Fixe** :
-La teinte est identique pour tous les noeuds.
+La teinte est identique pour tous les nœuds.
 ![](https://i.imgur.com/9vC9K7s.png)
 
-**Application sur les noeuds** : symbolisation des noeuds (barycentre des zones) avec une *forme* cercle (choix unique) de *taille* fixée et de teinte unique noire.
+**Application sur les nœuds** : symbolisation des nœuds (barycentre des zones) avec une *forme* cercle (choix unique) de *taille* fixée et de teinte unique noire.
 
 ![](https://i.imgur.com/j8Zm1b8.png)
 
 **Couleur / Variable** : 
-La teinte des noeuds ne sera pas identique pour tous, mais basée sur un dégradé de ton prédéfini. Le choix  de la progression (divergente ou non) sera fonction du type de caractère (précisé dans le champs type).
+La teinte des nœuds ne sera pas identique pour tous, mais basée sur un dégradé de ton prédéfini. Le choix  de la progression (divergente ou non) sera fonction du type de caractère (précisé dans le champs type).
 
-Le choix de nuancer la teinte des noeuds est associé ici à un caractère (ici le nombre de degrés pondéré - *weighted degree*) dont on précise le type (quantitatif).
+Le choix de nuancer la teinte des nœuds est associé ici à un caractère (ici le nombre de degrés pondéré - *weighted degree*) dont on précise le type (quantitatif).
 
-Idéalement, il est nécessaire de paramétrer simultanément la taille des noeuds, en utilisant le même caractère (ici le nombre de degrés pondéré - *weighted degree*) - sinon, les noeuds conserveront la même taille et le résultat de l'application d'une nuance sera peu visible.
+Idéalement, il est nécessaire de paramétrer simultanément la taille des nœuds, en utilisant le même caractère (ici le degré pondéré - *weighted degree*) - sinon, les nœuds conserveront la même taille et le résultat de l'application d'une nuance sera peu visible.
 
 ![](https://i.imgur.com/EoiKGIi.png)
 
 ### 5.1.2. Taille
 
 **Taille / Fixe** :
-La taille (surface) des noeuds est identique pour tous et fixée sur une valeur donnée.
+La taille (surface) des nœuds est identique pour tous et fixée sur une valeur donnée.
 ![](https://i.imgur.com/hhNWGt0.png)
 
 **Taille / Variable** 
-La taille (surface) des noeuds est variable, selon une fonction (racine, racine carrée ou logarithmique) proportionelle à la valeur d'un caractère (quantitatif discret - de stock).
+La taille (surface) des nœuds est variable, selon une fonction (racine, racine carrée ou logarithmique) proportionelle à la valeur d'un caractère (quantitatif discret - de stock).
 
 La correspondance entre les valeurs du caractère et leur symbolisation graphique est paramétrable grâce à l'application d'un *ratio*.
 
@@ -255,24 +256,24 @@ La correspondance entre les valeurs du caractère et leur symbolisation graphiqu
 Le *ratio* est fixé par défaut à 0,02% de la plus grande dimension du rectangle d’encombrement maximal du jeu de données de flux.
 
 ### 5.1.3. Texte
-Une étiquette, correspondant aux modalités d'un des champs du jeu de données, peut être ajoutée aux noeuds, sa teinte et son opacité fixées. 
+Une étiquette, correspondant aux modalités d'un des champs du jeu de données, peut être ajoutée aux nœuds, sa teinte et son opacité fixées. 
 
 ![](https://i.imgur.com/qjg23Xc.png)
 
 ### 5.1.4. Opacité
-L'opacité consite à agir sur le degré de transparence d'une teinte.
+L'opacité consiste à agir sur le degré de transparence d'une teinte.
 
 **Opacité / Fixe** :
-L'opacité de la teinte des noeuds est identique pour tous les noeuds, elle est paramétrable, entre 0 et 1.
+L'opacité de la teinte des nœuds est identique pour tous les nœuds, elle est paramétrable, entre 0 et 1.
 
 ![](https://i.imgur.com/u86Tm0M.png)
 
 **Opacité / Variable** :
-L'opacité de la teinte des noeuds est variable, en fonction d'un caractère (ici le degré pondéré, *weighted degree*), selon une fonction (linéaire, carrée, racine carrée et logarithmique) paramétrable, dont il est possible de définir les valeurs minimum et maximum, respectivement 0.25 et 0,85, par défaut.
+L'opacité de la teinte des nœuds est variable, en fonction d'un caractère (ici le degré pondéré, *weighted degree*), selon une fonction (linéaire, carrée, racine carrée et logarithmique) paramétrable, dont il est possible de définir les valeurs minimum et maximum, respectivement 0.25 et 0,85, par défaut.
 
 ![](https://i.imgur.com/2zhzEth.png)
 
-**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille* *variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
+**Application sur les nœuds** : symbolisation des nœuds avec une *forme* cercle de *taille* *variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
 ![](https://i.imgur.com/UxOvM50.png)
 
 
@@ -337,13 +338,12 @@ La courbure de cette tête est générée, selon l'algorithme de Chaikin qui per
 **Couleur / Fixe** :
 La teinte des liens est identique pour tous.
 
-
 **Couleur / Variable** : 
 La teinte des liens n'est pas identique pour tous, elle est basée sur un dégradé de ton prédéfini. Le choix  de la progression (divergente ou non) sera fonction du type de caractère (précisé dans le champs type).
 
 Le choix de nuancer la teinte des liens est associé ici à un caractère (pseudo) continu dont il est nécessaire de préciser le type (quantitatif).
 
-Idéalement, il est nécessaire de paramétrer simultanément la *taille* des liens, en utilisant un caractère discret (ici le nombre de degrés pondéré - *weighted degree*) et leur couleur en utilisant un caractère continu (rapport ou taux) - sinon, les liens conserveront la même taille et le résultat de l'application d'une nuance sera peu visible.
+Idéalement, il est nécessaire de paramétrer simultanément la *taille* des liens, en utilisant un caractère discret (ici le degré pondéré - *weighted degree*) et leur couleur en utilisant un caractère continu (rapport ou taux) - sinon, les liens conserveront la même taille et le résultat de l'application d'une nuance sera peu visible.
 
 ### 5.3.5. Taille (*size*)
 
@@ -425,7 +425,7 @@ Il est également possible d'ajouter ses propres tuiles *via* un géo serveur, e
 ## 5.5. Import d'une couche .GEOJSON
 ![](https://i.imgur.com/UuZhMyC.png)
 
-Quelle que soit l'échelle (mondiale, régionale ou locale) il est possible d'ajouter un fond de carte vectoriel quelcoque, au format geojson.
+Quelle que soit l'échelle (mondiale, régionale ou locale), il est possible d'ajouter un fond de carte vectoriel quelconque, au format geojson.
 
 Pour cela,il faut charger son ficher et le nommer.
 
@@ -435,7 +435,7 @@ Ensuite, il est possible de modifier son dessin, sa couleur de fond et de contou
 
 ## 7. Gestion et disposition des couches
 
-L'ajout de couches d'information contribue à masquer les couches initiales de noeuds et de liens ; les dernières couches ajoutées s'étant placées au premier plan. 
+L'ajout de couches d'information contribue à masquer les couches initiales de nœuds et de liens ; les dernières couches ajoutées s'étant placées au premier plan. 
 
 ![](https://i.imgur.com/eNnmz1d.png)
 
@@ -451,7 +451,7 @@ Pour rendre les flux visibles, il convient de modifier la disposition des diffé
 
 ![](https://i.imgur.com/qUAGkWr.png)
 
-On observe ainsi que la couche des flux vient d'être mis au premier plan.
+On observe ainsi que la couche des flux vient d'être mise au premier plan.
 
 ## 7.2. Gérer l'apparence des couches
 
@@ -499,14 +499,14 @@ L'affichage des filtres par défaut est le suivant.
 
 L'application précise littéralement les valeurs de filtrage :
 
-- la part en pourcentage de liens (figurés) représentée (ici 10% de l'ensemble des liens)
-- la part en pourcentage du total de l'information de flux (valeur) représentée (83,5%)
-- la part en pourcentage de l'ensemble des noeuds : 36,5%
+- la part en pourcentage de liens (figurés) représentée (ici 10 % de l'ensemble des liens)
+- la part en pourcentage du total de l'information de flux (valeur) représentée (83,5 %)
+- la part en pourcentage de l'ensemble des nœuds : 36,5 %
 
->>***Commentaire*** : *84% de l'information de flux est échangée entre 36% des lieux qui représentent les 10% de liens les plus forts, en volume - seul un tiers des lieux est impliqué dans ces échanges.*
+>>***Commentaire*** : *84 % de l'information est échangée entre 36 % des lieux qui représentent les 10 % des liens les plus forts, en volume - seul un tiers des lieux est impliqué dans ces échanges.*
 
 ## 8.1. Filtrage numérique
-Il est possible de modifier ces paramètres de filtrage, en agissant sur les données de flux (liens ou noeuds)
+Il est possible de modifier ces paramètres de filtrage, en agissant sur les données de flux (liens ou nœuds)
 
 ![](https://i.imgur.com/8w3HdbN.png)
 
@@ -515,11 +515,11 @@ Il est possible de modifier ces paramètres de filtrage, en agissant sur les don
 - Représentation de l'ensemble des échanges
 ![](https://i.imgur.com/050JPXs.png)
 
-- Sélection des 25% des échanges les plus importants,soit 8% des noeuds et 0,6% des liens les plus forts
+- Sélection des 25 % des échanges les plus importants,soit 8 % des nœuds et 0,6 % des liens les plus forts
 
 ![](https://i.imgur.com/wCrEodP.png)
 
-- Sélection des 50% des échanges les plus importants,soit 14% des noeuds et 2% des liens les plus forts
+- Sélection des 50 % des échanges les plus importants,soit 14 % des nœuds et 2 % des liens les plus forts
 
 ![](https://i.imgur.com/b2IrUaK.png)
 
@@ -531,14 +531,14 @@ Il est possible de modifier ces paramètres de filtrage, en agissant sur les don
 
 - Modification des paramètres de distance parcourue
 
-Sélection des flux parcourant entre 4000 et 12000 kilomètres
+Sélection des flux parcourant entre 4 000 et 12 000 kilomètres
 
 ![](https://i.imgur.com/iWPJh5W.png)
 
 - Résultat
 
->> ***Commentaire*** : la sélection des flux commerciaux qui parcourent de l'ordre de 4000 à 12000 kilomètres de distance correspond aux flux commerciaux à moyenne distance, qui s'expriment principalement dans l'hémisphère nord..
-Ces flux de moyenne distance représentent 34% du volume total de marchandises qui correspond à 25% des relations financières commerciales les plus importantes, qui s'expriment entre 4% des pays les plus riches. 
+>> ***Commentaire*** : la sélection des flux commerciaux qui parcourent de l'ordre de 4 000 à 12 000 kilomètres de distance correspond aux flux commerciaux à moyenne distance, qui s'expriment principalement dans l'hémisphère nord..
+Ces flux de moyenne distance représentent 34 % du volume total de marchandises qui correspond à 25 % des relations financières commerciales les plus importantes, qui s'expriment entre 4 % des pays les plus riches. 
 On notera que seules l'Amérique du nord et des pays de l'Europe de l'ouest sont impliqués dans ces échanges - dont on rappelle qu'ils correspondent au cumul des valeurs observées sur l'ensemble de la période.
 
 ![](https://i.imgur.com/Yst7lLx.png)
@@ -549,14 +549,14 @@ Pour appliquer un double filtrage, il suffit d'ajouter deux filtres différents 
 
 **Application sur la vue en cours**
 
-Distance parcourue inférieure à 8000 km (de moyenne à petite longue distance)
+Distance parcourue inférieure à 8 000 km (de moyenne à petite longue distance)
 Volume total échangé supérieur à 47 millions (paramètre empirique, pris au hasard)
 
 ![](https://i.imgur.com/XBXyVmt.png)
 
 ![](https://i.imgur.com/J0C06iJ.png)
 
->> **Commentaire** : les échanges qui s'expriment à moyenne voire longue distance (moins de 8000 km environ) et qui représentent plus de 48 millions de livres sterling échangés correspondent à 50% du total de ces interactions commerciales qui sont réalisées entre les 16% de noeuds les plus importants.
+>> **Commentaire** : les échanges qui s'expriment à moyenne voire longue distance (moins de 8 000 km environ) et qui représentent plus de 48 millions de livres sterling échangés correspondent à 50 % du total de ces interactions commerciales qui sont réalisées entre les 16 % de noeuds les plus importants.
 
 ## 8.2. Filtrage temporel
 
