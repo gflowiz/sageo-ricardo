@@ -462,11 +462,6 @@ Le bouton ![](https://i.imgur.com/Qwi9fas.png) permet de modifier le style des f
 
 ![](https://i.imgur.com/5EqW8k8.png)
 
-
-
-
-
-
 # 8. Filtrage des couches numériques
 
 Il est réalisé soit visuellement à l’aide d’une fenêtre de sélection sur un histogramme interactif à fenêtre coulissante (*slider*), soit de manière numérique (en indiquant un seuil). 
@@ -524,6 +519,21 @@ Ces flux de moyenne distance représentent 34% du volume total de marchandises q
 On notera que seules l'Amérique du nord et des pays de l'Europe de l'ouest sont impliqués dans ces échanges - dont on rappelle qu'ils correspondent au cumul des valeurs observées sur l'ensemble de la période.
 
 ![](https://i.imgur.com/Yst7lLx.png)
+
+### 8.1.3. Création d'un double filtrage sur les liens, selon le volume et la distance parcourue**
+
+Pour appliquer un double filtrage, il suffit d'ajouter deux filtres différents sur les liens, puis de paramétrer chacun d'entre eux. 
+
+**Application sur la vue en cours**
+
+Distance parcourue inférieure à 8000 km (de moyenne à petite longue distance)
+Volume total échangé supérieur à 47 millions (paramètre empirique, pris au hasard)
+
+![](https://i.imgur.com/XBXyVmt.png)
+
+![](https://i.imgur.com/J0C06iJ.png)
+
+>> Commentaire : les échanges qui s'expriment à moyenne voire longue distance (moins de 8000 km environ) et qui représentent plus de 48 millions de livres sterling échangés correspondent à 50% du total de ces interactions commerciales qui sont réalisées entre les 16% de noeuds les plus importants.
 
 ## 8.2. Filtrage temporel
 Les données étant découpées dans le temps, il est possible de sélectionner une ou plusieurs dates à représenter. 
