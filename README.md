@@ -13,7 +13,7 @@ Arabesque est disponible gratuitement à l'adresse suivante : [http://arabesque.
 
 Il fonctionne avec Chromium et Mozilla. La documentation générale (travail en cours) et le code informatique sont disponibles sur le dépôt suivant : https://github.com/gflowiz/arabesque
 
-Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répértoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponnibles dans ce dépôts et on la structure suivante :
+Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répértoriés dans la base de données [RICARDO](http://ricardo.medialab.sciences-po.fr/#/). Les fichiers utilisés sont disponnibles dans ce dépôt et ont la structure suivante :
 
 - [SAGEO_RICardo_nodes.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_nodes.csv) : fichiers de localisation géographique des entités
 	- id (identifiant de l'entité géographique)
