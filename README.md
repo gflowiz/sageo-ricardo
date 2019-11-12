@@ -300,25 +300,25 @@ La géométrie orientée ne tient pas en compte de l'éventuelle direction des f
 
 Le *type* de la géométrie correspond à l'application de la (variable visuelle) forme du corps du lien, que celui-ci soit orienté ou non.
 
-**Type / Droit** 
+![](https://i.imgur.com/KLhZnjs.png)
+
+**Type / Droit - "Straight"** 
 Le lien est rectilinéaire et orienté, grâce à une demi-tête de flèche
-![](https://i.imgur.com/oZeAQh3.png)
 
-**Type / Droit sans crochet**
+**Type / Droit sans crochet - "Straight no hook"**
 Le lien est rectilinéaire et orienté, il présente une pointe sans crochet
-![](https://i.imgur.com/AV8uFxA.png)
 
-**Type / Triangle**
+**Type / Triangle - "Triangle"**
 Le lien est rectilinéaire et prend la forme d'un triangle
-![](https://i.imgur.com/4zLzaXE.png)
 
-**Type / courbe**
+**Type / courbe - "Curve"**
 Le lien est courbe et orienté, sa courbure est paramétrable.
-![](https://i.imgur.com/rjcZ9nj.png)
 
-**Type / Triangle courbe**
+**Type / Triangle courbe - "Triangle curve"**
 Le lien est courbe et prend la forme d'une goutte d'eau, sa courbure est paramétrable.
-![](https://i.imgur.com/1vYWl6V.png)
+
+**Type / Non orienté -  "Non oriented"**
+Le lien est droit valué ou non, il ne présente pas d'orientation.
 
 ## 5.2.3. Flèche (*Arrow*)
 
