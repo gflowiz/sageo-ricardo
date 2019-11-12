@@ -23,19 +23,19 @@ Pour ce tutoriel, nous avons utilisé les flux commerciaux historiques répertor
 	- lat (latitude)
 	- long (longitude)
 
-- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historique
+- [SAGEO_RICardo_edges_small.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_small.csv) : flux commerciaux historique agrégés pour réduire la taille du jeu de données
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
-	- decennie (décennie conernée par le flux)
+	- decennie (décennie concernée par le flux)
 
 
-- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique
+- [SAGEO_RICardo_edges_nona.csv](https://raw.githubusercontent.com/gflowiz/sageo-ricardo/master/SAGEO_RICardo_edges_nona.csv) : flux commerciaux historique non agrégés
 	- idorigine (identifiant de l'entité d'origine du flux)
 	- iddestination (identifiant de l'entité de destination du flux)
 	- volume (volume financier du flux en Livre sterling)
 	- annee (année de l'échange)
-	- péiode (période de l'échange)
+	- periode (période de l'échange)
 	- decennie (décennie de l'échange)
 
 
@@ -57,11 +57,11 @@ Pour une première découverte d' ***arabesque***, vous pouvez utiliser les jeux
 
 ![](https://i.imgur.com/LdUeTbj.png)
 
-#### 1.1 Données OD
+#### 1.1 Données OD (Origine/Destination)
 
-Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien.CSV (séparateur : virgule) en format long. 
+Arabesque nécessite le chargement d'au moins un ensemble de données de flux : un fichier de lien au format CSV (séparateur : virgule) en format long. 
 
-Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : ceux correspondant aux lieux d'origine, aux lieux de destination et aux valeurs de flux. 
+Vous devez également déclarer les 3 champs minimums requis pour la cartographie des flux : identifiants des lieux d'origine, des lieux de destination et valeurs de flux. 
 
 Si la matrice OD est temporelle ou disponible pour différentes catégories, vous devez également choisir une méthode d'agrégation.
 
@@ -91,7 +91,7 @@ Après le chargement des fichiers de liens et de nœuds, l'application effectue 
 
 Les liens qui n'ont pas d'ID d'origine ou de destination sont automatiquement supprimés, de même pour les nœuds.
 
-La liste complète des noueds, liens supprimés est alors affichée, uniquement pour consultation - vous devez donc la copier si vous souhaitez conserver la liste.
+La liste des noeuds et liens supprimés est alors affichée, uniquement pour consultation - vous devez donc la copier si vous souhaitez conserver la liste.
 
 ![](https://i.imgur.com/ID0iSq6.png)
 
@@ -99,13 +99,13 @@ La liste complète des noueds, liens supprimés est alors affichée, uniquement 
 
 ### Calcul automatique d'indicateurs
 
-Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée CSV (Voir sections Export et sauvegarde):
+Les jeux de données sont automatiquement modifiés lors de leur importation, l'application calcule différents indicateurs - qui sont disponibles dans une liste pouvant être téléchargée au format CSV (Voir sections Export et sauvegarde):
 
 **Indicateurs sur les liens :**
 distance euclidienne entre les entités d'origine et de destination
 
 **Indicateurs sur les noeuds :**
-Exemple d'indicateurs additionnels calculés sur les noeuds (données RIcardo)
+Exemple d'indicateurs additionnels calculés sur les noeuds (données RICardo)
 
 ![](https://i.imgur.com/ygefevd.png)
 
@@ -156,7 +156,7 @@ Elle présente en outre différents boutons permettant la mise en oeuvre d'actio
 
 ### 2.2.2. Légende
 
-Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicaters présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
+Une légende est générée automatiquement pour chaque carte, elle reprend les éléments de symbolisation (taille, couleur et opacité) présents sur la carte pour symboliser les indicateurs présentés. Ici, le volume des flux et le nombre de degrés des lieux. 
 
 
 ## 2.3. Panneau de droite
@@ -204,6 +204,7 @@ La symbologie des noeuds consiste à paramétrer leur dessin, et à appliquer de
 
 **Couleur / Fixe** :
 La teinte est identique pour tous les noeuds.
+
 ![](https://i.imgur.com/9vC9K7s.png)
 
 **Application sur les noeuds** : symbolisation des noeuds (barycentre des zones) avec une *forme* cercle (choix unique) de *taille* fixée et de teinte unique noire.
@@ -223,6 +224,7 @@ Idéalement, il est nécessaire de paramétrer simultanément la taille des noeu
 
 **Taille / Fixe** :
 La taille (surface) des noeuds est identique pour tous et fixée sur une valeur donnée.
+
 ![](https://i.imgur.com/hhNWGt0.png)
 
 **Taille / Variable** 
@@ -240,7 +242,7 @@ Une étiquette, correspondant aux modalités d'un des champs du jeu de données,
 ![](https://i.imgur.com/qjg23Xc.png)
 
 ### 5.1.4. Opacité
-L'opacité consite à agir sur le degré de transparence d'une teinte.
+L'opacité consiste à agir sur le degré de transparence d'une teinte.
 
 **Opacité / Fixe** :
 L'opacité de la teinte des noeuds est identique pour tous les noeuds, elle est paramétrable, entre 0 et 1.
@@ -252,16 +254,19 @@ L'opacité de la teinte des noeuds est variable, en fonction d'un caractère (ic
 
 ![](https://i.imgur.com/2zhzEth.png)
 
-**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille* *variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
+**Application sur les noeuds** : symbolisation des noeuds avec une *forme* cercle de *taille variable* selon une fonction linéaire, représentée avec une teinte noire nuancée avec variation d'opacité.
+
 ![](https://i.imgur.com/UxOvM50.png)
 
 
 ## 5.2. Symbolisation des liens
+
 ![](https://i.imgur.com/FrioZff.png)
 
 La symbologie des liens consiste à paramétrer leur dessin, et à appliquer des variables visuelles permettant d'enrichir qualitativement la carte. 
 
 Exemple: lien droits bilatéraux orientés, teinte noire unique 
+
 ![](https://i.imgur.com/QLhHhIu.png)
 
 ## 5.2.1. Géometrie
@@ -282,22 +287,27 @@ Le *type* de la géométrie correspond à l'application de la (variable visuelle
 
 **Type / Droit** 
 Le lien est rectilinéaire et orienté, grâce à une demi-tête de flèche
+
 ![](https://i.imgur.com/oZeAQh3.png)
 
 **Type / Droit sans crochet**
 Le lien est rectilinéaire et orienté, il présente une pointe sans crochet
+
 ![](https://i.imgur.com/AV8uFxA.png)
 
 **Type / Triangle**
 Le lien est rectilinéaire et prend la forme d'un triangle
+
 ![](https://i.imgur.com/4zLzaXE.png)
 
 **Type / courbe**
 Le lien est courbe et orienté, sa courbure est paramétrable.
+
 ![](https://i.imgur.com/rjcZ9nj.png)
 
 **Type / Triangle courbe**
 Le lien est courbe et prend la forme d'une goutte d'eau, sa courbure est paramétrable.
+
 ![](https://i.imgur.com/1vYWl6V.png)
 
 ## 5.2.3. Flèche (*Arrow*)
@@ -362,12 +372,14 @@ Il est également possible d'importer un fond en indiquant son URL : ![](https:/
 -- Ajout d'une *bounding box*, symbolisation graphique et disposition en arrière-plan (voir section Gestion des dispositions).
 ![](https://i.imgur.com/Vw1HWsA.png)
 
--- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions). 
+-- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions).
+
 ![](https://i.imgur.com/e5A8SU4.png)
 
 ![](https://i.imgur.com/Kwpl7fg.png)
 
 -- Ajout d'une couche *land* (espaces continentaux), symbolisation graphique et placement au-dessus de la couche graticules_20
+
 ![](https://i.imgur.com/45HJTPe.png)
 
 ![](https://i.imgur.com/EHOCgSR.png)
@@ -383,10 +395,12 @@ Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 ![](https://i.imgur.com/ENIQ2fm.png)
 
 .. et par type de tuile (texte - Fond de carte)
+
 ![](https://i.imgur.com/AK27WOr.png)
 
 
 ### 5.3.2. Exemple de chargement de tuiles
+
 1. Selectionner Carto_basemap dans **Type**
 2. Selectionner Carto_Dark_NoLabel dans **tiles**
 3. Cliquer sur ![](https://i.imgur.com/3l7BA9c.png)
@@ -399,9 +413,10 @@ Il est également possible d'ajouter ses propres tuiles *via* un géo serveur, e
   
   
 ## 5.5. Import d'une couche .GEOJSON
+
 ![](https://i.imgur.com/UuZhMyC.png)
 
-Quelle que soit l'échelle (mondiale, régionale ou locale) il est possible d'ajouter un fond de carte vectoriel quelcoque, au format geojson.
+Quelle que soit l'échelle (mondiale, régionale ou locale) il est possible d'ajouter un fond de carte vectoriel quelconque, au format geojson.
 
 Pour cela,il faut charger son ficher et le nommer.
 
