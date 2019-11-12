@@ -356,11 +356,21 @@ Différents fonds de carte ou éléments d'habillage vectoriels, préchargés so
  
 La symbolisation de ce nouveau fond d'habillage peut être modifiée en paramétrant l'apparence du dessin de ses contours et fonds, de sa teinte et de son opacité.
 
-Ex : choix d'ajouter une "bounding box" qui correspond à l'espace de définition de la carte, et symbolisation du fond en bleu.
-
-![](https://i.imgur.com/HUHohCU.png)
-
 Il est également possible d'importer un fond en indiquant son URL : ![](https://i.imgur.com/SQPqh0V.png)
+
+**Applications sur la vue en cours**
+-- Ajout d'une *bounding box*, symbolisation graphique et disposition en arrière-plan (voir section Gestion des dispositions).
+![](https://i.imgur.com/Vw1HWsA.png)
+
+-- Ajout de lignes *graticules_20*, symbolisation graphique et disposition au-dessus de la *bounding box* (voir section Gestion des dispositions). 
+![](https://i.imgur.com/e5A8SU4.png)
+
+![](https://i.imgur.com/Kwpl7fg.png)
+
+-- Ajout d'une couche *land* (espaces continentaux), symbolisation graphique et placement au-dessus de la couche graticules_20
+![](https://i.imgur.com/45HJTPe.png)
+
+![](https://i.imgur.com/EHOCgSR.png)
 
 ## 5.5. Ajout de couches de tuiles
 
@@ -368,11 +378,11 @@ Pour les données observées à l'échelle locale, il est possible d'ajouter des
 
 ![](https://i.imgur.com/nSUHJFe.png)
 
-Plusieurs tuiles sont proposées, elles sont triées par fournisseur 
+Plusieurs tuiles sont proposées, elles sont triées par fournisseur ...
 
 ![](https://i.imgur.com/ENIQ2fm.png)
 
-et par type de tuile (texte - Fond de carte)
+.. et par type de tuile (texte - Fond de carte)
 ![](https://i.imgur.com/AK27WOr.png)
 
 
