@@ -4,6 +4,9 @@
 
 *Arabesque* quick tutorial (v.0)
 
+**Réalisation :** Equipe gflowiz, 2019.
+**Licence :** CC-BY-SA.
+
 
 ## Introduction générale
 
