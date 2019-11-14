@@ -125,7 +125,7 @@ Exemple d'indicateurs additionnels calculés sur les nœuds (données RIcardo)
 
 ### Symbolisation automatique
 
-Carte réalisée par défaut lors de l'arrivée sur l'interface.
+Une carte est réalisée par défaut lors de l'arrivée sur l'interface : seuls les 10% de liens les plus importants (en valeur) sont représentés et symbolisés selon leur volume (variable renseignée à l'import) ; les noeuds sont symbolisés selon leur degré (calculé automatiquement).
 
 ![](https://i.imgur.com/vzw3sW0.png)
 
@@ -133,7 +133,7 @@ L'interface est composée des deux panneaux suivantes.
 
 ## 2.1. Panneau de gauche
 
-La gestion des couches est réalisée sur la partie de gauche de l'interface. Elle composée de deux sous-parties:
+La gestion de l'information géographique (des couches) est réalisée sur la partie de gauche de l'interface. Elle composée de deux sous-parties:
 
 ### Généralités
 
@@ -181,9 +181,9 @@ Une légende est générée automatiquement pour chaque carte, elle reprend les 
 
 ## 2.3. Panneau de droite
 
-**L'exploration et le filtrage** des données sont effectués sur la partie droite.
+La gestion de l'information statistique à savoir **l'exploration et le filtrage** est réalisée sur la partie droite de l'interface. 
 
-Elle permet d'agir sur n'importe quelle variables caractérisant les nœuds et/ou les liens et/ou la distance parcourue par les flux (variable calculée lors du chargement des données). 
+Elle permet d'agir sur n'importe quelle variable caractérisant les nœuds et/ou les liens et/ou la distance parcourue par les flux (variable calculée lors du chargement des données). 
 
 Les résultats de l'application d'un ou de plusieurs filtres sont proposés par défaut en tête du panneau.
 
